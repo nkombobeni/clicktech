@@ -312,7 +312,7 @@ body {
 ========================= */
 body {
   font-family: Arial, sans-serif;
-  background: #d647056c;
+  background: #e6650f;
   color: #111111;
 }
 
@@ -385,7 +385,7 @@ body {
 
   padding: 14px 24px;
 
-  background: #cf5503;
+  background: #e6650f;
 
   color: #ffffff;
 
@@ -492,302 +492,631 @@ body {
 
 
 
-/* =========================
-   style.css
-========================= */
+/* ======================================================
+   RESET + TOKENS
+====================================================== */
+:root {
 
-/* =========================
-   RESET
-========================= */
+  --bg: #0B0C0F;
+  --card: #111315;
+  --text: #e06805;
+  --radius: 24px;
+
+}
+
 * {
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/* =========================
-   BASE
-========================= */
-/* =========================
-   SECTION PRODUITS
-========================= */
-.products-section {
-
-  padding: 80px 20px;
-  background: #e6650f;
 
 }
 
-/* CONTENEUR */
-.container {
+/* ======================================================
+   BODY
+====================================================== */
+body {
 
-  max-width: 1280px;
+  background: var(--bg);
 
-  margin: 0 auto;
+  font-family: Arial, sans-serif;
 
-}
-
-/* =========================
-   HEADER SECTION
-========================= */
-.section-header {
-
-  text-align: center;
-
-  margin-bottom: 48px;
+  color: var(--text);
 
 }
 
-.section-header h2 {
+/* ======================================================
+   WRAPPER
+====================================================== */
+.products-wrapper {
 
-  font-size: 38px;
+  display: flex;
 
-  margin-bottom: 14px;
+  flex-direction: column;
 
-  color: #0f172a;
+  gap: 24px;
 
-}
-
-.section-header p {
-
-  max-width: 700px;
-
-  margin: 0 auto;
-
-  font-size: 16px;
-
-  color: #475569;
+  padding: 24px;
 
 }
 
-/* =========================
-   GRILLE PRODUITS
-========================= */
-.products-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(280px, 1fr));
-
-  gap: 28px;
-
-}
-
-/* =========================
-   CARTE PRODUIT
-========================= */
-.product-card {
-
-  position: relative;
-
-  border-radius: 3px;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 8px 18px rgba(0,0,0,0.08);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-
-  background: #ffffff;
-
-}
-
-/* HOVER */
-.product-card:hover {
-
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 10px 24px rgba(0,0,0,0.12);
-
-}
-
-/* =========================
-   IMAGE PRODUIT
-========================= */
-.product-media {
-
-  position: relative;
-
-}
-
-.product-media img {
+/* ======================================================
+   HERO SECTION
+====================================================== */
+.product-hero {
 
   width: 100%;
 
-  height: 380px;
+}
 
-  object-fit: cover;
+/* ======================================================
+   CARD CONTAINER
+====================================================== */
+.container {
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  background: var(--card);
+
+  border-radius: var(--radius);
+
+  padding: 48px;
+
+  overflow: hidden;
+
+}
+
+/* ======================================================
+   LAYOUT GRID
+====================================================== */
+.product-layout {
+
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 48px;
+
+  align-items: center;
+
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+.product-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.eyebrow {
+
+  font-size: 12px;
+
+  color: var(--muted);
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.2px;
 
   display: block;
 
+  margin-bottom: 16px;
+
 }
 
-/* =========================
-   OVERLAY FLOU
-========================= */
-.product-overlay {
+.product-title {
+
+  font-size: clamp(32px, 4vw, 48px);
+
+  font-weight: 800;
+
+  color: var(--text);
+
+  line-height: 1.1;
+
+  margin-bottom: 20px;
+
+}
+
+.product-desc {
+
+  font-size: 16px;
+
+  color: var(--muted);
+
+  line-height: 1.6;
+
+  margin-bottom: 32px;
+
+  max-width: 520px;
+
+}
+
+/* ======================================================
+   BUTTON
+====================================================== */
+.btn-primary {
+
+  display: inline-block;
+
+  width: fit-content;
+
+  background: var(--text);
+
+  color: #0B0C0F;
+
+  padding: 12px 24px;
+
+  border-radius: 0px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+
+}
+
+.btn-primary:hover {
+
+  transform: translateY(-2px);
+
+  opacity: 0.95;
+
+}
+
+/* ======================================================
+   VISUAL
+====================================================== */
+.product-visual {
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+/* ======================================================
+   PRODUCT IMAGE
+====================================================== */
+.product-img {
+
+  width: 100%;
+
+  max-width: 340px;
+
+  height: 420px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  position: relative;
+
+  z-index: 2;
+
+  transition: transform 0.3s ease;
+
+  box-shadow:
+    0 20px 60px rgba(59,130,246,0.25);
+
+}
+
+.product-img:hover {
+
+  transform: scale(1.02);
+
+}
+
+/* ======================================================
+   GLASS EFFECTS
+====================================================== */
+.glass-1,
+.glass-2,
+.glass-3 {
 
   position: absolute;
 
-  bottom: 0;
-  left: 0;
+  backdrop-filter: blur(10px);
+
+  background: rgba(59,130,246,0.15);
+
+  border: 1px solid rgba(59,130,246,0.3);
+
+  z-index: 1;
+
+}
+
+.glass-1 {
+
+  width: 80px;
+
+  height: 80px;
+
+  border-radius: 50%;
+
+  top: 10%;
+
+  left: 5%;
+
+}
+
+.glass-2 {
+
+  width: 100px;
+
+  height: 100px;
+
+  border-radius: 24px;
+
+  bottom: 15%;
+
+  right: 8%;
+
+  transform: rotate(15deg);
+
+}
+
+.glass-3 {
+
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 50%;
+
+  top: 40%;
+
   right: 0;
 
-  padding:
-    24px 20px 20px;
+}
 
-  background:
-    linear-gradient(
-      to top,
-      rgba(255,255,255,0.95) 60%,
-      rgba(255,255,255,0) 100%
-    );
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 900px) {
 
-  backdrop-filter: blur(6px);
+  .container {
+
+    padding: 32px 24px;
+
+  }
+
+  .product-layout {
+
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+
+    text-align: center;
+
+  }
+
+  .product-desc {
+
+    margin: 0 auto 32px;
+
+  }
+
+  .btn-primary {
+
+    margin: 0 auto;
+
+  }
+
+  .product-img {
+
+    height: 320px;
+
+    max-width: 260px;
+
+  }
 
 }
 
-/* =========================
-   TITRE PRODUIT
-========================= */
-.product-name {
 
-  font-size: 20px;
 
-  font-weight: 700;
 
-  color: #0f172a;
 
-  margin-bottom: 6px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================================
+   PAGINATION
+====================================================== */
+.pagination {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  padding: 32px 16px;
+
+  background: #0B0C0F;
 
 }
 
-/* =========================
-   DESCRIPTION PRODUIT
-========================= */
-.product-desc {
+/* ======================================================
+   PAGE BUTTON
+====================================================== */
+.page-btn {
 
-  font-size: 14px;
+  min-width: 44px;
 
-  color: #334155;
+  height: 44px;
 
-  line-height: 1.4;
+  border-radius: 10px;
 
-  margin-bottom: 14px;
+  background: #1A1D21;
 
-}
+  color: #F8FAFC;
 
-/* =========================
-   ACTIONS PRODUIT
-========================= */
-.product-actions {
+  border: 1px solid #2A2E33;
+
+  font-weight: 600;
+
+  font-size: 15px;
 
   display: flex;
 
   align-items: center;
 
-  justify-content: space-between;
+  justify-content: center;
+
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+
+}
+
+/* ======================================================
+   PAGE BUTTON HOVER
+====================================================== */
+.page-btn:hover {
+
+  background: #2A2E33;
+
+  border-color: #e2480b;
+
+  transform: translateY(-2px);
+
+}
+
+/* ======================================================
+   ACTIVE PAGE
+====================================================== */
+.page-btn.active {
+
+  background: #e25502;
+
+  border-color: #e25502;
+
+  color: #ffffff;
+
+}
+
+/* ======================================================
+   PREV NEXT
+====================================================== */
+.page-btn.prev,
+.page-btn.next {
+
+  padding: 0 16px;
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+.site-footer {
+
+  background: #0B0C0F;
+
+  color: #F8FAFC;
+
+  padding: 64px 20px 40px;
+
+  border-top: 1px solid #1A1D21;
+
+}
+
+/* ======================================================
+   FOOTER CONTAINER
+====================================================== */
+.footer-container {
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+
+  gap: 48px;
+
+}
+
+/* ======================================================
+   BRAND
+====================================================== */
+.footer-brand h3 {
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  margin-bottom: 12px;
+
+}
+
+/* ======================================================
+   TAGLINE
+====================================================== */
+.footer-tagline {
+
+  font-size: 14px;
+
+  color: #c95b01;
+
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+
+  max-width: 320px;
+
+}
+
+/* ======================================================
+   BADGES
+====================================================== */
+.footer-badges {
+
+  display: flex;
 
   gap: 12px;
 
 }
 
-/* =========================
-   BOUTON ACHAT
-========================= */
-.btn-buy {
+.footer-badges img {
 
-  display: inline-flex;
+  width: 40px;
 
-  align-items: center;
-  justify-content: center;
+  height: 40px;
 
-  padding:
-    10px 20px;
+  border-radius: 50%;
 
-  background: #e6650f;;
+  background: #1A1D21;
 
-  color: #ffffff;
-
-  border-radius: 0px;
-
-  text-decoration: none;
-
-  font-weight: 600;
-
-  transition:
-    background 0.3s ease;
+  object-fit: cover;
 
 }
 
-/* HOVER */
-.btn-buy:hover {
-
-  background: #cc430342;
-
-}
-
-/* =========================
-   LOGO AMAZON
-========================= */
-.amazon-logo {
-
-  font-size: 12px;
-
-  color: #6b7280;
-
-  font-weight: 500;
-
-}
-
-/* =========================
-   DISCLAIMER
-========================= */
-.affiliate-disclaimer {
-
-  margin-top: 40px;
-
-  text-align: center;
+/* ======================================================
+   FOOTER TITLES
+====================================================== */
+.footer-col h4 {
 
   font-size: 14px;
 
-  color: #64748b;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  color: #F8FAFC;
+
+  margin-bottom: 16px;
 
 }
 
-/* =========================
-   RESPONSIVE MOBILE
-========================= */
-@media (max-width: 600px) {
+/* ======================================================
+   FOOTER LINKS
+====================================================== */
+.footer-col ul {
 
-  .products-grid {
+  list-style: none;
+
+}
+
+.footer-col li {
+
+  margin-bottom: 10px;
+
+}
+
+.footer-col a {
+
+  color: #e44c05;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: color 0.2s ease;
+
+}
+
+/* ======================================================
+   FOOTER LINK HOVER
+====================================================== */
+.footer-col a:hover {
+
+  color: #df5a0249;
+
+}
+
+/* ======================================================
+   WATERMARK
+====================================================== */
+.footer-watermark {
+
+  margin-top: 56px;
+
+  text-align: center;
+
+  font-size: clamp(48px, 10vw, 120px);
+
+  font-weight: 800;
+
+  color: rgba(255,255,255,0.03);
+
+  user-select: none;
+
+  line-height: 1;
+
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 900px) {
+
+  .footer-container {
 
     grid-template-columns: 1fr;
 
-  }
-
-  .section-header h2 {
-
-    font-size: 30px;
-
-  }
-
-  .product-media img {
-
-    height: 340px;
+    gap: 32px;
 
   }
 
 }
-
-
-
-
-
-
-
