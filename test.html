@@ -1,88 +1,158 @@
-<!-- ======================================================
-     index.html - ClickTech
-====================================================== -->
+/* FILENAME: index.html */
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
-  <!-- META -->
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClickTech — Tests & Produits Tech</title>
 
   <meta 
-    name="viewport" 
-    content="width=device-width, initial-scale=1.0"
+    name="description" 
+    content="Découvrez les derniers produits tech, tests complets et comparatifs : smartphones, audio, maison connectée et accessoires."
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" 
+    rel="stylesheet"
   >
 
-  <title>
-    ClickTech - Produits Tech Premium
-  </title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
-  <!-- ======================================================
-       WRAPPER PRODUITS
-  ====================================================== -->
-  <main class="products-wrapper">
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+  <header class="site-header">
 
-    <!-- ======================================================
-         PRODUIT 1
-    ====================================================== -->
-    <section class="product-hero">
+    <div class="container header-container">
+
+      <a href="#" class="logo">
+
+        ClickTech
+
+      </a>
+
+      <div class="header-actions">
+
+        <!-- Recherche -->
+        <input 
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Rechercher un produit..."
+          aria-label="Recherche produit"
+        >
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- =========================================
+       HERO
+  ========================================== -->
+  <section class="hero">
+
+    <div class="container hero-content">
+
+      <span class="hero-badge">
+
+        Média Tech & Affiliation
+
+      </span>
+
+      <h1>
+
+        Les meilleurs produits tech testés et sélectionnés
+
+      </h1>
+
+      <p>
+
+        Smartphones, audio, maison connectée et accessoires.
+        Découvrez nos avis, notes et recommandations comme
+        un vrai média spécialisé.
+
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+       FILTRES
+  ========================================== -->
+  <section class="filters-section">
+
+    <div class="container filters-container">
+
+      <button class="filter-btn active" data-category="all">
+
+        Tous
+
+      </button>
+
+      <button class="filter-btn" data-category="Smartphones">
+
+        Smartphones
+
+      </button>
+
+      <button class="filter-btn" data-category="Audio">
+
+        Audio
+
+      </button>
+
+      <button class="filter-btn" data-category="Maison Connectée">
+
+        Maison Connectée
+
+      </button>
+
+      <button class="filter-btn" data-category="Auto">
+
+        Auto
+
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+       DERNIERS PRODUITS
+  ========================================== -->
+  <main class="main-content">
+
+    <section class="products-section">
 
       <div class="container">
 
-        <div class="product-layout">
+        <div class="section-header">
 
-          <!-- ==========================================
-               CONTENU
-          =========================================== -->
-          <div class="product-content">
+          <h2>
 
-            <span class="eyebrow">
-              See the Market From Every Angle
-            </span>
+            Les derniers produits
 
-            <h1 class="product-title">
-              Samsung Galaxy A55
-            </h1>
+          </h2>
 
-            <p class="product-desc">
-              Smartphone 5G premium avec écran AMOLED fluide,
-              excellente autonomie et appareil photo performant
-              pour le quotidien.
-            </p>
+        </div>
 
-            <a 
-              href="details-samsung-a55.html"
-              class="btn-primary"
-            >
-              Acheter sur Amazon
-            </a>
+        <div 
+          class="products-grid"
+          id="latestProducts"
+        >
 
-          </div>
-
-          <!-- ==========================================
-               VISUEL
-          =========================================== -->
-          <div class="product-visual">
-
-            <div class="glass-1"></div>
-            <div class="glass-2"></div>
-            <div class="glass-3"></div>
-
-            <img 
-              src="images/produit1.png"
-              alt="Samsung Galaxy A55"
-              class="product-img"
-            >
-
-          </div>
+          <!-- Skeleton -->
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
 
         </div>
 
@@ -90,53 +160,27 @@
 
     </section>
 
-    <!-- ======================================================
-         PRODUIT 2
-    ====================================================== -->
-    <section class="product-hero">
+    <!-- =====================================
+         PRODUITS POPULAIRES
+    ====================================== -->
+    <section class="products-section">
 
       <div class="container">
 
-        <div class="product-layout">
+        <div class="section-header">
 
-          <div class="product-content">
+          <h2>
 
-            <span class="eyebrow">
-              Smart Performance Everyday
-            </span>
+            Les produits populaires
 
-            <h1 class="product-title">
-              Redmi Note 13 Pro
-            </h1>
+          </h2>
 
-            <p class="product-desc">
-              Un smartphone puissant avec recharge ultra rapide,
-              appareil photo 200MP et expérience fluide pour
-              réseaux sociaux et gaming.
-            </p>
+        </div>
 
-            <a 
-              href="details-redmi-note13.html"
-              class="btn-primary"
-            >
-              Acheter sur Amazon
-            </a>
-
-          </div>
-
-          <div class="product-visual">
-
-            <div class="glass-1"></div>
-            <div class="glass-2"></div>
-            <div class="glass-3"></div>
-
-            <img 
-              src="images/produit2.png"
-              alt="Redmi Note 13 Pro"
-              class="product-img"
-            >
-
-          </div>
+        <div 
+          class="products-grid"
+          id="popularProducts"
+        >
 
         </div>
 
@@ -144,158 +188,27 @@
 
     </section>
 
-    <!-- ======================================================
-         PRODUIT 3
-    ====================================================== -->
-    <section class="product-hero">
+    <!-- =====================================
+         TESTS
+    ====================================== -->
+    <section class="products-section">
 
       <div class="container">
 
-        <div class="product-layout">
+        <div class="section-header">
 
-          <div class="product-content">
+          <h2>
 
-            <span class="eyebrow">
-              Productivity Without Limits
-            </span>
+            Les tests
 
-            <h1 class="product-title">
-              HP Pavilion 15
-            </h1>
-
-            <p class="product-desc">
-              Laptop moderne avec SSD rapide et autonomie durable,
-              parfait pour étudiants, bureautique et création.
-            </p>
-
-            <a 
-              href="details-hp-pavilion.html"
-              class="btn-primary"
-            >
-              Acheter sur Amazon
-            </a>
-
-          </div>
-
-          <div class="product-visual">
-
-            <div class="glass-1"></div>
-            <div class="glass-2"></div>
-            <div class="glass-3"></div>
-
-            <img 
-              src="images/produit3.png"
-              alt="HP Pavilion 15"
-              class="product-img"
-            >
-
-          </div>
+          </h2>
 
         </div>
 
-      </div>
-
-    </section>
-
-    <!-- ======================================================
-         PRODUIT 4
-    ====================================================== -->
-    <section class="product-hero">
-
-      <div class="container">
-
-        <div class="product-layout">
-
-          <div class="product-content">
-
-            <span class="eyebrow">
-              Minimal Design Maximum Power
-            </span>
-
-            <h1 class="product-title">
-              Lenovo Slim 3
-            </h1>
-
-            <p class="product-desc">
-              Design léger, écran immersif et performances solides
-              pour le multitâche et le travail mobile.
-            </p>
-
-            <a 
-              href="details-lenovo-slim3.html"
-              class="btn-primary"
-            >
-              Acheter sur Amazon
-            </a>
-
-          </div>
-
-          <div class="product-visual">
-
-            <div class="glass-1"></div>
-            <div class="glass-2"></div>
-            <div class="glass-3"></div>
-
-            <img 
-              src="images/produit4.png"
-              alt="Lenovo Slim 3"
-              class="product-img"
-            >
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ======================================================
-         PRODUIT 5
-    ====================================================== -->
-    <section class="product-hero">
-
-      <div class="container">
-
-        <div class="product-layout">
-
-          <div class="product-content">
-
-            <span class="eyebrow">
-              Premium Experience For Everyday
-            </span>
-
-            <h1 class="product-title">
-              iPhone 13
-            </h1>
-
-            <p class="product-desc">
-              Smartphone premium avec performances ultra fluides,
-              caméra puissante et excellente optimisation iOS.
-            </p>
-
-            <a 
-              href="details-iphone13.html"
-              class="btn-primary"
-            >
-              Acheter sur Amazon
-            </a>
-
-          </div>
-
-          <div class="product-visual">
-
-            <div class="glass-1"></div>
-            <div class="glass-2"></div>
-            <div class="glass-3"></div>
-
-            <img 
-              src="images/produit5.png"
-              alt="iPhone 13"
-              class="product-img"
-            >
-
-          </div>
+        <div 
+          class="products-grid tests-grid"
+          id="testsProducts"
+        >
 
         </div>
 
@@ -304,6 +217,105 @@
     </section>
 
   </main>
+
+  <!-- =========================================
+       PAGE DÉTAIL
+  ========================================== -->
+  <section 
+    class="product-detail hidden"
+    id="productDetail"
+  >
+
+    <div class="detail-hero">
+
+      <img 
+        id="detailImage"
+        src=""
+        alt=""
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="container detail-container">
+
+      <div class="detail-header">
+
+        <span 
+          class="detail-category"
+          id="detailCategory"
+        ></span>
+
+        <h1 id="detailTitle"></h1>
+
+        <div class="detail-meta">
+
+          <span 
+            class="detail-rating"
+            id="detailRating"
+          ></span>
+
+          <span 
+            class="detail-price"
+            id="detailPrice"
+          ></span>
+
+        </div>
+
+      </div>
+
+      <!-- Verdict -->
+      <div class="detail-card">
+
+        <h2>
+
+          Verdict
+
+        </h2>
+
+        <p id="detailDescription"></p>
+
+      </div>
+
+      <!-- Specs -->
+      <div class="detail-card">
+
+        <h2>
+
+          Fiche technique
+
+        </h2>
+
+        <table class="specs-table">
+
+          <tbody id="specsTable"></tbody>
+
+        </table>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="detail-cta">
+
+        <!-- REMPLACER PAR TON LIEN D'AFFILIATION -->
+        <a 
+          href="{{LIEN_AFFILIATION}}"
+          class="cta-btn"
+          target="_blank"
+          rel="nofollow sponsored noopener"
+        >
+
+          Voir l'offre
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
 
 </body>
 </html>

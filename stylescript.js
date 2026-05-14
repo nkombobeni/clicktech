@@ -51,3 +51,22 @@ const navBottom =
 
 navBottom.style.scrollBehavior =
   'smooth';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/

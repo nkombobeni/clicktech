@@ -333,7 +333,7 @@ body {
 body {
   font-family: Arial, sans-serif;
   background: #e6650f;
-  color: #111111;
+  color: #cc7979;
 }
 
 /* =========================
@@ -405,13 +405,13 @@ body {
 
   padding: 14px 24px;
 
-  background: #e6650f;
+  background: #00000062;
 
   color: #ffffff;
 
   text-decoration: none;
 
-  border-radius: 0px;
+  border-radius: 5px;
 
   font-size: 16px;
   font-weight: 600;
@@ -508,341 +508,244 @@ body {
 
 
 
+/* ========================================= */
+/* SECTION CATALOGUE */
+/* ========================================= */
 
+.catalogue-section{
+    padding:60px 20px;
+    background:#f8fafc;
+}
 
+/* ========================================= */
+/* HEADER */
+/* ========================================= */
 
+.catalogue-header{
+    text-align:center;
+    margin-bottom:40px;
+}
 
-/* ======================================================
-   RESET + TOKENS
-====================================================== */
-:root {
+.catalogue-header h2{
+    font-size:32px;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:12px;
+}
 
-  --bg: #0B0C0F;
-  --card: #111315;
-  --text: #e06805;
-  --radius: 24px;
+.catalogue-header p{
+    max-width:680px;
+    margin:0 auto;
+    font-size:16px;
+    line-height:1.6;
+    color:#64748b;
+}
+
+/* ========================================= */
+/* GRID */
+/* ========================================= */
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+/* ========================================= */
+/* CARD */
+/* ========================================= */
+
+.product-card{
+    background:#ffffff;
+    border-radius:18px;
+    overflow:hidden;
+
+    box-shadow:0 4px 18px rgba(15,23,42,0.06);
+
+    transition:0.3s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(15,23,42,0.10);
+}
+
+/* ========================================= */
+/* IMAGE */
+/* ========================================= */
+
+.product-image{
+    overflow:hidden;
+    background:#ffffff;
+}
+
+.product-image img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+
+    transition:transform 0.4s ease;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.05);
+}
+
+/* ========================================= */
+/* CONTENT */
+/* ========================================= */
+
+.product-content{
+    padding:20px;
+}
+
+.product-title{
+    font-size:18px;
+    font-weight:600;
+    line-height:1.4;
+    color:#0f172a;
+
+    margin-bottom:10px;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.product-description{
+    font-size:14px;
+    line-height:1.6;
+    color:#64748b;
+
+    margin-bottom:20px;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+/* ========================================= */
+/* FOOTER CARD */
+/* ========================================= */
+
+.product-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+}
+
+/* ========================================= */
+/* AMAZON LOGO */
+/* ========================================= */
+
+.merchant{
+    display:flex;
+    align-items:center;
+}
+
+.merchant img{
+    height:30px;
+    width:auto;
+    object-fit:contain;
+    transform: translateY(18);
+}
+
+/* ========================================= */
+/* BUTTON */
+/* ========================================= */
+
+.buy-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:10px 18px;
+
+    background: #e6650f;
+    color:#ffffff;
+
+    border-radius:10px;
+
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+
+    transition:0.3s ease;
+}
+
+.buy-button:hover{
+    background: #e6650f;
+}
+
+/* ========================================= */
+/* VOIR PLUS */
+/* ========================================= */
+
+.see-more-wrapper{
+    display:flex;
+    justify-content:center;
+
+    margin-top:50px;
+}
+
+.see-more-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:14px 28px;
+
+    border:2px solid #e6650f;
+    border-radius:999px;
+
+    color:#e6650f;
+    text-decoration:none;
+    font-weight:600;
+
+    transition:0.3s ease;
+}
+
+.see-more-btn:hover{
+    background:#ffe4ec;
+}
+
+.arrow{
+    transition:transform 0.3s ease;
+}
+
+.see-more-btn:hover .arrow{
+    transform:translateX(4px);
+}
+
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
+
+@media (max-width:1024px){
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
 }
 
-* {
-
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-}
-
-/* ======================================================
-   BODY
-====================================================== */
-body {
-
-  background: var(--bg);
-
-  font-family: Arial, sans-serif;
-
-  color: var(--text);
-
-}
-
-/* ======================================================
-   WRAPPER
-====================================================== */
-.products-wrapper {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 24px;
-
-  padding: 24px;
-
-}
-
-/* ======================================================
-   HERO SECTION
-====================================================== */
-.product-hero {
-
-  width: 100%;
-
-}
-
-/* ======================================================
-   CARD CONTAINER
-====================================================== */
-.container {
-
-  max-width: 1200px;
-
-  margin: 0 auto;
-
-  background: var(--card);
-
-  border-radius: var(--radius);
-
-  padding: 48px;
-
-  overflow: hidden;
-
-}
-
-/* ======================================================
-   LAYOUT GRID
-====================================================== */
-.product-layout {
-
-  display: grid;
-
-  grid-template-columns: 1.1fr 0.9fr;
-
-  gap: 48px;
-
-  align-items: center;
-
-}
-
-/* ======================================================
-   CONTENT
-====================================================== */
-.product-content {
-
-  display: flex;
-
-  flex-direction: column;
-
-}
-
-.eyebrow {
-
-  font-size: 12px;
-
-  color: var(--muted);
-
-  text-transform: uppercase;
-
-  letter-spacing: 1.2px;
-
-  display: block;
-
-  margin-bottom: 16px;
-
-}
-
-.product-title {
-
-  font-size: clamp(32px, 4vw, 48px);
-
-  font-weight: 800;
-
-  color: var(--text);
-
-  line-height: 1.1;
-
-  margin-bottom: 20px;
-
-}
-
-.product-desc {
-
-  font-size: 16px;
-
-  color: var(--muted);
-
-  line-height: 1.6;
-
-  margin-bottom: 32px;
-
-  max-width: 520px;
-
-}
-
-/* ======================================================
-   BUTTON
-====================================================== */
-.btn-primary {
-
-  display: inline-block;
-
-  width: fit-content;
-
-  background: var(--text);
-
-  color: #0B0C0F;
-
-  padding: 12px 24px;
-
-  border-radius: 0px;
-
-  font-weight: 600;
-
-  text-decoration: none;
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
-
-}
-
-.btn-primary:hover {
-
-  transform: translateY(-2px);
-
-  opacity: 0.95;
-
-}
-
-/* ======================================================
-   VISUAL
-====================================================== */
-.product-visual {
-
-  position: relative;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-}
-
-/* ======================================================
-   PRODUCT IMAGE
-====================================================== */
-.product-img {
-
-  width: 100%;
-
-  max-width: 340px;
-
-  height: 420px;
-
-  object-fit: cover;
-
-  border-radius: 20px;
-
-  position: relative;
-
-  z-index: 2;
-
-  transition: transform 0.3s ease;
-
-  box-shadow:
-    0 20px 60px rgba(59,130,246,0.25);
-
-}
-
-.product-img:hover {
-
-  transform: scale(1.02);
-
-}
-
-/* ======================================================
-   GLASS EFFECTS
-====================================================== */
-.glass-1,
-.glass-2,
-.glass-3 {
-
-  position: absolute;
-
-  backdrop-filter: blur(10px);
-
-  background: rgba(59,130,246,0.15);
-
-  border: 1px solid rgba(59,130,246,0.3);
-
-  z-index: 1;
-
-}
-
-.glass-1 {
-
-  width: 80px;
-
-  height: 80px;
-
-  border-radius: 50%;
-
-  top: 10%;
-
-  left: 5%;
-
-}
-
-.glass-2 {
-
-  width: 100px;
-
-  height: 100px;
-
-  border-radius: 24px;
-
-  bottom: 15%;
-
-  right: 8%;
-
-  transform: rotate(15deg);
-
-}
-
-.glass-3 {
-
-  width: 60px;
-
-  height: 60px;
-
-  border-radius: 50%;
-
-  top: 40%;
-
-  right: 0;
-
-}
-
-/* ======================================================
-   RESPONSIVE
-====================================================== */
-@media (max-width: 900px) {
-
-  .container {
-
-    padding: 32px 24px;
-
-  }
-
-  .product-layout {
-
-    grid-template-columns: 1fr;
-
-    gap: 32px;
-
-    text-align: center;
-
-  }
-
-  .product-desc {
-
-    margin: 0 auto 32px;
-
-  }
-
-  .btn-primary {
-
-    margin: 0 auto;
-
-  }
-
-  .product-img {
-
-    height: 320px;
-
-    max-width: 260px;
-
-  }
+@media (max-width:768px){
+
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .catalogue-header h2{
+        font-size:26px;
+    }
+
+    .product-image img{
+        height:220px;
+    }
 
 }
 
@@ -871,272 +774,22 @@ body {
 
 
 
-/* ======================================================
-   PAGINATION
-====================================================== */
-.pagination {
 
-  display: flex;
 
-  justify-content: center;
 
-  align-items: center;
 
-  flex-wrap: wrap;
 
-  gap: 8px;
 
-  padding: 32px 16px;
 
-  background: #0B0C0F;
 
-}
 
-/* ======================================================
-   PAGE BUTTON
-====================================================== */
-.page-btn {
 
-  min-width: 44px;
 
-  height: 44px;
 
-  border-radius: 10px;
 
-  background: #1A1D21;
 
-  color: #F8FAFC;
 
-  border: 1px solid #2A2E33;
 
-  font-weight: 600;
 
-  font-size: 15px;
 
-  display: flex;
 
-  align-items: center;
-
-  justify-content: center;
-
-  text-decoration: none;
-
-  transition: all 0.2s ease;
-
-  cursor: pointer;
-
-}
-
-/* ======================================================
-   PAGE BUTTON HOVER
-====================================================== */
-.page-btn:hover {
-
-  background: #2A2E33;
-
-  border-color: #e2480b;
-
-  transform: translateY(-2px);
-
-}
-
-/* ======================================================
-   ACTIVE PAGE
-====================================================== */
-.page-btn.active {
-
-  background: #e25502;
-
-  border-color: #e25502;
-
-  color: #ffffff;
-
-}
-
-/* ======================================================
-   PREV NEXT
-====================================================== */
-.page-btn.prev,
-.page-btn.next {
-
-  padding: 0 16px;
-
-}
-
-/* ======================================================
-   FOOTER
-====================================================== */
-.site-footer {
-
-  background: #0B0C0F;
-
-  color: #F8FAFC;
-
-  padding: 64px 20px 40px;
-
-  border-top: 1px solid #1A1D21;
-
-}
-
-/* ======================================================
-   FOOTER CONTAINER
-====================================================== */
-.footer-container {
-
-  max-width: 1200px;
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-
-  gap: 48px;
-
-}
-
-/* ======================================================
-   BRAND
-====================================================== */
-.footer-brand h3 {
-
-  font-size: 20px;
-
-  font-weight: 700;
-
-  margin-bottom: 12px;
-
-}
-
-/* ======================================================
-   TAGLINE
-====================================================== */
-.footer-tagline {
-
-  font-size: 14px;
-
-  color: #c95b01;
-
-  line-height: 1.6;
-
-  margin-bottom: 20px;
-
-  max-width: 320px;
-
-}
-
-/* ======================================================
-   BADGES
-====================================================== */
-.footer-badges {
-
-  display: flex;
-
-  gap: 12px;
-
-}
-
-.footer-badges img {
-
-  width: 40px;
-
-  height: 40px;
-
-  border-radius: 50%;
-
-  background: #1A1D21;
-
-  object-fit: cover;
-
-}
-
-/* ======================================================
-   FOOTER TITLES
-====================================================== */
-.footer-col h4 {
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
-
-  color: #F8FAFC;
-
-  margin-bottom: 16px;
-
-}
-
-/* ======================================================
-   FOOTER LINKS
-====================================================== */
-.footer-col ul {
-
-  list-style: none;
-
-}
-
-.footer-col li {
-
-  margin-bottom: 10px;
-
-}
-
-.footer-col a {
-
-  color: #e44c05;
-
-  text-decoration: none;
-
-  font-size: 14px;
-
-  transition: color 0.2s ease;
-
-}
-
-/* ======================================================
-   FOOTER LINK HOVER
-====================================================== */
-.footer-col a:hover {
-
-  color: #df5a0249;
-
-}
-
-/* ======================================================
-   WATERMARK
-====================================================== */
-.footer-watermark {
-
-  margin-top: 56px;
-
-  text-align: center;
-
-  font-size: clamp(48px, 10vw, 120px);
-
-  font-weight: 800;
-
-  color: rgba(255,255,255,0.03);
-
-  user-select: none;
-
-  line-height: 1;
-
-}
-
-/* ======================================================
-   RESPONSIVE
-====================================================== */
-@media (max-width: 900px) {
-
-  .footer-container {
-
-    grid-template-columns: 1fr;
-
-    gap: 32px;
-
-  }
-
-}
