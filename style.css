@@ -428,24 +428,179 @@ body {
 /* =========================
    IMAGE HERO
 ========================= */
-.hero-image {
-  flex: 1;
-
-  display: flex;
-  justify-content: center;
-}
 
 /* SVG IMAGE */
-.hero-svg-img {
+/* =========================================
+   HERO PRODUCT CAROUSEL
+========================================= */
 
+.product-carousel {
   width: 100%;
-  max-width: 850px;
-
-  height: auto;
-
-  display: block;
-
+  max-width: 560px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
 }
+
+/* =========================================
+   TRACK
+========================================= */
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* =========================================
+   SLIDE
+========================================= */
+
+.product-slide {
+  min-width: 100%;
+  text-decoration: none;
+  color: #111;
+  padding: 4px;
+}
+
+.product-slide:hover .slide-content {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.slide-content {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.slide-text {
+  flex: 1;
+}
+
+.slide-category {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #FF6B35;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.slide-title {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.slide-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  max-width: 260px;
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.slide-image {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================================
+   DOTS
+========================================= */
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #DDD;
+  cursor: pointer;
+  transition: background 0.2s ease,
+              transform 0.2s ease;
+}
+
+.dot.active {
+  background: #FF6B35;
+  transform: scale(1.1);
+}
+
+/* =========================================
+   SPONSORED TEXT
+========================================= */
+
+.sponsored-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 11px;
+  color: #666;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .slide-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .slide-description {
+    max-width: 100%;
+  }
+
+  .slide-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .slide-title {
+    font-size: 20px;
+  }
+}
+
+
 
 /* =========================
    RESPONSIVE MOBILE
@@ -750,6 +905,173 @@ body {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================= */
+/* FOOTER */
+/* ========================================= */
+
+.site-footer{
+    background:#F8F9FA;
+    border-top:1px solid #E5E7EB;
+    padding:50px 20px 20px;
+    margin-top:60px;
+    font-family:Arial, sans-serif;
+}
+
+/* ========================================= */
+/* CONTAINER */
+/* ========================================= */
+
+.footer-container{
+    max-width:1200px;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+/* ========================================= */
+/* TITRES */
+/* ========================================= */
+
+.footer-title{
+    font-size:22px;
+    font-weight:700;
+    color:#333333;
+    margin-bottom:16px;
+}
+
+.footer-subtitle{
+    font-size:16px;
+    font-weight:600;
+    color:#333333;
+    margin-bottom:16px;
+}
+
+/* ========================================= */
+/* TEXTES */
+/* ========================================= */
+
+.footer-text{
+    font-size:14px;
+    line-height:1.7;
+    color:#555555;
+}
+
+.footer-text.small{
+    max-width:320px;
+}
+
+/* ========================================= */
+/* LIENS */
+/* ========================================= */
+
+.footer-links{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer-links li{
+    margin-bottom:10px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:#555555;
+    font-size:14px;
+
+    transition:color 0.3s ease;
+}
+
+.footer-links a:hover{
+    color:#FF6B35;
+}
+
+/* ========================================= */
+/* RÉSEAUX SOCIAUX */
+/* ========================================= */
+
+.footer-socials{
+    display:flex;
+    gap:12px;
+    margin-top:18px;
+}
+
+.footer-socials a{
+    width:36px;
+    height:36px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#ffffff;
+    border:1px solid #E5E7EB;
+    border-radius:50%;
+
+    text-decoration:none;
+    color:#333333;
+    font-size:13px;
+    font-weight:600;
+
+    transition:all 0.3s ease;
+}
+
+.footer-socials a:hover{
+    background:#FF6B35;
+    color:#ffffff;
+    border-color:#FF6B35;
+}
+
+/* ========================================= */
+/* COPYRIGHT */
+/* ========================================= */
+
+.footer-bottom{
+    border-top:1px solid #E5E7EB;
+    margin-top:40px;
+    padding-top:20px;
+
+    text-align:center;
+}
+
+.footer-bottom p{
+    font-size:13px;
+    color:#777777;
+}
+
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
+
+@media (max-width:768px){
+
+    .footer-container{
+        grid-template-columns:1fr;
+        gap:32px;
+    }
+
+    .site-footer{
+        padding:40px 20px 20px;
+    }
+
+}
 
 
 

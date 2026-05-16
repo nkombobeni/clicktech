@@ -3,319 +3,63 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ClickTech — Tests & Produits Tech</title>
-
-  <meta 
-    name="description" 
-    content="Découvrez les derniers produits tech, tests complets et comparatifs : smartphones, audio, maison connectée et accessoires."
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Découvrez notre catalogue de produits tech avec comparatifs, avis et liens d'affiliation Amazon."
   />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" 
-    rel="stylesheet"
-  >
+  <title>ClickTech - Catalogue Produits</title>
 
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- =========================================
-       HEADER
-  ========================================== -->
-  <header class="site-header">
+  <!-- =========================
+       SECTION CATALOGUE PRODUITS
+  ========================== -->
+  <section class="catalogue-section" aria-label="Catalogue produits">
+    <div class="container">
 
-    <div class="container header-container">
+      <!-- Titre section -->
+      <div class="section-heading">
+        <span class="section-label">Produits Tech</span>
+        <h2>Notre sélection du moment</h2>
+        <p>
+          Retrouvez les meilleurs produits tech et maison connectée sélectionnés
+          pour leurs performances, leur fiabilité et leur rapport qualité/prix.
+        </p>
+      </div>
 
-      <a href="#" class="logo">
+      <!-- Grille produits dynamique -->
+      <div class="products-grid" id="productsGrid"></div>
 
-        ClickTech
-
-      </a>
-
-      <div class="header-actions">
-
-        <!-- Recherche -->
-        <input 
-          type="search"
-          id="searchInput"
-          class="search-input"
-          placeholder="Rechercher un produit..."
-          aria-label="Recherche produit"
+      <!-- Bouton Voir tous les articles -->
+      <div class="see-more-wrapper">
+        <a
+          href="SEE_MORE_LINK_ICI"
+          class="see-more-btn"
+          aria-label="Voir tous les articles"
         >
-
-      </div>
-
-    </div>
-
-  </header>
-
-  <!-- =========================================
-       HERO
-  ========================================== -->
-  <section class="hero">
-
-    <div class="container hero-content">
-
-      <span class="hero-badge">
-
-        Média Tech & Affiliation
-
-      </span>
-
-      <h1>
-
-        Les meilleurs produits tech testés et sélectionnés
-
-      </h1>
-
-      <p>
-
-        Smartphones, audio, maison connectée et accessoires.
-        Découvrez nos avis, notes et recommandations comme
-        un vrai média spécialisé.
-
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- =========================================
-       FILTRES
-  ========================================== -->
-  <section class="filters-section">
-
-    <div class="container filters-container">
-
-      <button class="filter-btn active" data-category="all">
-
-        Tous
-
-      </button>
-
-      <button class="filter-btn" data-category="Smartphones">
-
-        Smartphones
-
-      </button>
-
-      <button class="filter-btn" data-category="Audio">
-
-        Audio
-
-      </button>
-
-      <button class="filter-btn" data-category="Maison Connectée">
-
-        Maison Connectée
-
-      </button>
-
-      <button class="filter-btn" data-category="Auto">
-
-        Auto
-
-      </button>
-
-    </div>
-
-  </section>
-
-  <!-- =========================================
-       DERNIERS PRODUITS
-  ========================================== -->
-  <main class="main-content">
-
-    <section class="products-section">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <h2>
-
-            Les derniers produits
-
-          </h2>
-
-        </div>
-
-        <div 
-          class="products-grid"
-          id="latestProducts"
-        >
-
-          <!-- Skeleton -->
-          <div class="skeleton-card"></div>
-          <div class="skeleton-card"></div>
-          <div class="skeleton-card"></div>
-          <div class="skeleton-card"></div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- =====================================
-         PRODUITS POPULAIRES
-    ====================================== -->
-    <section class="products-section">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <h2>
-
-            Les produits populaires
-
-          </h2>
-
-        </div>
-
-        <div 
-          class="products-grid"
-          id="popularProducts"
-        >
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- =====================================
-         TESTS
-    ====================================== -->
-    <section class="products-section">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <h2>
-
-            Les tests
-
-          </h2>
-
-        </div>
-
-        <div 
-          class="products-grid tests-grid"
-          id="testsProducts"
-        >
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- =========================================
-       PAGE DÉTAIL
-  ========================================== -->
-  <section 
-    class="product-detail hidden"
-    id="productDetail"
-  >
-
-    <div class="detail-hero">
-
-      <img 
-        id="detailImage"
-        src=""
-        alt=""
-        loading="lazy"
-      >
-
-    </div>
-
-    <div class="container detail-container">
-
-      <div class="detail-header">
-
-        <span 
-          class="detail-category"
-          id="detailCategory"
-        ></span>
-
-        <h1 id="detailTitle"></h1>
-
-        <div class="detail-meta">
-
-          <span 
-            class="detail-rating"
-            id="detailRating"
-          ></span>
-
-          <span 
-            class="detail-price"
-            id="detailPrice"
-          ></span>
-
-        </div>
-
-      </div>
-
-      <!-- Verdict -->
-      <div class="detail-card">
-
-        <h2>
-
-          Verdict
-
-        </h2>
-
-        <p id="detailDescription"></p>
-
-      </div>
-
-      <!-- Specs -->
-      <div class="detail-card">
-
-        <h2>
-
-          Fiche technique
-
-        </h2>
-
-        <table class="specs-table">
-
-          <tbody id="specsTable"></tbody>
-
-        </table>
-
-      </div>
-
-      <!-- CTA -->
-      <div class="detail-cta">
-
-        <!-- REMPLACER PAR TON LIEN D'AFFILIATION -->
-        <a 
-          href="{{LIEN_AFFILIATION}}"
-          class="cta-btn"
-          target="_blank"
-          rel="nofollow sponsored noopener"
-        >
-
-          Voir l'offre
-
+          Voir tous les articles
+          <span class="arrow">›</span>
         </a>
-
       </div>
 
     </div>
-
   </section>
 
+  <!-- JS -->
   <script src="script.js"></script>
-
 </body>
 </html>
