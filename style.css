@@ -479,7 +479,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 22px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition:
     transform 0.2s ease,
@@ -1072,6 +1072,44 @@ body {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

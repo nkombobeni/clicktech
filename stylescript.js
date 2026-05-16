@@ -201,3 +201,48 @@ startAutoSlide();
 
 
 
+
+
+
+
+
+
+// script.js
+
+// =========================
+// CHANGEMENT IMAGE PRODUIT
+// =========================
+
+const mainImage = document.getElementById("mainProductImage");
+const thumbs = document.querySelectorAll(".thumb");
+
+thumbs.forEach((thumb) => {
+  thumb.addEventListener("click", () => {
+
+    // Retire la classe active
+    thumbs.forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    // Ajoute active
+    thumb.classList.add("active");
+
+    // Change image principale
+    const newSrc = thumb.querySelector("img").src;
+    mainImage.src = newSrc;
+
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
