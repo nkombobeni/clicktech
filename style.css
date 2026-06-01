@@ -62,30 +62,53 @@
 
 
 /* RESPONSIVE MOBILE - ADAPTATION PRO */
+/* MOBILE : 4 BOUTONS SUR 1 LIGNE, CENTRES, SANS SCROLL */
 @media (max-width: 768px) {
   .header-top {
-    padding: 12px 0;
+    padding: 10px 0;
   }
 
   .logo-img {
-    height: 28px; /* logo plus petit mobile */
-    max-width: 150px;
+    height: 26px; /* logo un peu plus petit */
+    max-width: 140px;
   }
 
   .nav-list {
-    flex-wrap: wrap; /* passe à la ligne si écran petit */
-  }
-
-  .nav-link {
-    padding: 12px 18px;
-    font-size: 14px;
-    border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* CENTRER les 4 boutons */
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    width: 100%;
   }
 
   .nav-list li {
-    flex: 1 1 50%; /* 2 boutons par ligne sur mobile */
+    flex: 1 1 0; /* chaque bouton prend 25% de la largeur */
     text-align: center;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 4px; /* padding réduit pour gagner place */
+    font-size: 13px; /* police plus petite mais lisible */
+    font-weight: 500;
+    letter-spacing: 0; /* pas d’espace inutile */
+    white-space: nowrap;
+    border-bottom: none;
+  }
+
+  .nav-list li:last-child .nav-link {
+    border-right: none;
+  }
+}
+
+/* TRES PETITS ECRANS <360px iPhone SE */
+@media (max-width: 360px) {
+  .nav-link {
+    padding: 12px 2px;
+    font-size: 12px; /* minimum lisible */
   }
 }
 
