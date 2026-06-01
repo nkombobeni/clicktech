@@ -1,294 +1,99 @@
-
-* {
+/* RESET RAPIDE POUR HEADER */
+.site-header {
+  width: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* =========================
-   ROOT VARIABLES
-========================= */
-:root {
-
-  --accent: #000000;
-  --text: #e6650f;
-  --bg: #e6650f;
-  --border: #E5E7EB;
-
-}
-
-/* =========================
-   BASE
-========================= */
-body {
-  font-family: "Inter", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* =========================
-   HEADER
-========================= */
-.navbar {
-
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
+/* PARTIE 1 : LOGO FOND BLANC - PRO ET COMPACT */
+.header-top {
   background: #FFFFFF;
-
-  box-shadow:
-    0 2px 4px rgba(0,0,0,0.05);
-
-  border-bottom:
-    1px solid var(--border);
-
+  padding: 14px 0; /* compact, pas gros */
+  text-align: center;
+  border-bottom: 1px solid #E5E5E5; /* séparation fine discrète */
 }
 
-/* SHADOW WHEN SCROLLED */
-.navbar.scrolled {
-
-  box-shadow:
-    0 6px 20px rgba(0,0,0,0.08);
-
+.logo-link {
+  display: inline-block;
+  line-height: 0; /* évite espace blanc sous l'image */
 }
 
-/* =========================
-   LOGO SECTION
-========================= */
-.nav-top {
+.logo-img {
+  height: 32px; /* taille pro : normale, lisible */
+  width: auto;
+  max-width: 180px; /* évite logo géant */
+}
 
+/* PARTIE 2 : MENU FOND ORANGE - PRO */
+.header-nav {
+  background: #FF6600; /* orange Amazon pro */
+  width: 100%;
+}
+
+.nav-list {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 16px 0;
-
-}
-
-.logo {
-
-  font-size: 8px;
-  font-weight: 700;
-  text-decoration: none;
-
-  color: var(--text);
-
-}
-
-.logo img {
-
-  width: 160px;
-  height: auto;
-
-  margin-right: 12px;
-
-}
-
-/* =========================
-   NAV SECTION
-========================= */
-.nav-bottom {
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 12px;
-
-  padding: -16px 32px 16px;
-
-  overflow-x: auto;
-
-  white-space: nowrap;
-
-  scroll-snap-type: x proximity;
-
-  -webkit-overflow-scrolling: touch;
-
-}
-
-/* HIDE SCROLLBAR */
-.nav-bottom::-webkit-scrollbar {
-  display: none;
-}
-
-.nav-links {
-
-  display: flex;
-  align-items: center;
-
-  gap: 16px;
-
+  margin: 0;
+  padding: 0;
   list-style: none;
-
 }
 
 .nav-link {
-
-  flex-shrink: 0;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 8px 8px;
-
-  border-radius: 0px;
-
-  text-decoration: none;
-
-  color: var(--text);
-
-  font-size: 15px;
-  font-weight: 250;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-
-  scroll-snap-align: start;
-
-}
-
-/* ACTIVE LINK */
-.nav-link.active {
-
-  color: var(--accent);
-
-  font-weight: 700;
-
-  background:
-    rgba(68, 68, 68, 0.048);
-
-}
-
-/* HOVER */
-.nav-link:hover {
-
-  color: var(--accent);
-
-}
-
-/* =========================
-   CTA BUTTON
-========================= */
-.btn-cta {
-
-  flex-shrink: 0;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding:
-    10px 16px;
-
-  border-radius: 8px;
-
-  background: var(--accent);
-
+  display: block;
+  padding: 14px 28px;
   color: #FFFFFF;
-
   text-decoration: none;
-
-  font-size: 14px;
-  font-weight: 600;
-
-  transition:
-    opacity 0.2s ease;
-
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: background 0.2s ease;
 }
 
-.btn-cta:hover {
-
-  opacity: 0.9;
-
+.nav-list li:last-child .nav-link {
+  border-right: none;
 }
 
-
-
-
-
-
-
-/* =========================
-   TABLET
-========================= */
-@media (min-width: 768px) {
-
-  .nav-bottom {
-
-    gap: 24px;
-  }
-
-  
-}
-
-/* =========================
-   DESKTOP
-========================= */
-@media (min-width: 1024px) {
-
-  .navbar {
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding:
-      0 40px;
-
-    height: 72px;
-
-  }
-
-  .nav-top {
-
-    justify-content: flex-start;
-
-    padding: 0;
-
-  }
-
-  .nav-bottom {
-
-    flex: 1;
-
-    justify-content: center;
-
-    overflow-x: visible;
-
-    padding: 0;
-
-    gap: 32px;
-
-  }
-
-  .nav-links {
-
-    gap: 12px;
-
-  }
-
-  .btn-cta {
-
-    margin-left: 24px;
-
-  }
-
+.nav-link:hover {
+  background: rgba(0,0,0,0.08);
 }
 
 
 
+/* RESPONSIVE MOBILE - ADAPTATION PRO */
+@media (max-width: 768px) {
+  .header-top {
+    padding: 12px 0;
+  }
 
+  .logo-img {
+    height: 28px; /* logo plus petit mobile */
+    max-width: 150px;
+  }
 
+  .nav-list {
+    flex-wrap: wrap; /* passe à la ligne si écran petit */
+  }
 
+  .nav-link {
+    padding: 12px 18px;
+    font-size: 14px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
 
+  .nav-list li {
+    flex: 1 1 50%; /* 2 boutons par ligne sur mobile */
+    text-align: center;
+  }
+}
 
-
-
-
+@media (max-width: 420px) {
+  .nav-list li {
+    flex: 1 1 100%; /* 1 bouton par ligne sur très petit écran */
+  }
+}
 
 
 
