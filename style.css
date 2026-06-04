@@ -411,7 +411,10 @@ body {
   .slide-content {
     flex-direction: column;
     text-align: center;
-    padding: 20px;
+    padding: 16px; 
+
+    max-width: 305px;
+    margin: 24px auto;
   }
 
   .slide-description {
