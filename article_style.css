@@ -1,0 +1,691 @@
+/* RESET RAPIDE POUR HEADER */
+.site-header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* PARTIE 1 : LOGO FOND BLANC - PRO ET COMPACT */
+.header-top {
+  background: #FFFFFF;
+  padding: 8px 0; /* compact, pas gros */
+  text-align: center;
+  border-bottom: 1px solid #E5E5E5; /* séparation fine discrète */
+}
+
+.logo-link {
+  display: inline-block;
+  line-height: 0; /* évite espace blanc sous l'image */
+}
+
+.logo-img {
+  height: 54px; /* taille pro : normale, lisible */
+  width: auto;
+  max-width: 180px; /* évite logo géant */
+}
+
+/* PARTIE 2 : MENU FOND ORANGE - PRO */
+.header-nav {
+  background: #FF6600; /* orange Amazon pro */
+  width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  padding: 14px 28px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: background 0.2s ease;
+}
+
+.nav-list li:last-child .nav-link {
+  border-right: none;
+}
+
+.nav-link:hover {
+  background: rgba(0,0,0,0.08);
+}
+
+
+
+/* RESPONSIVE MOBILE - ADAPTATION PRO */
+/* MOBILE : 4 BOUTONS SUR 1 LIGNE, CENTRES, SANS SCROLL */
+@media (max-width: 768px) {
+  .header-top {
+    padding: 10px 0;
+  }
+
+  .logo-img {
+    height: 26px; /* logo un peu plus petit */
+    max-width: 140px;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* CENTRER les 4 boutons */
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .nav-list li {
+    flex: 1 1 0; /* chaque bouton prend 25% de la largeur */
+    text-align: center;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 4px; /* padding réduit pour gagner place */
+    font-size: 13px; /* police plus petite mais lisible */
+    font-weight: 500;
+    letter-spacing: 0; /* pas d’espace inutile */
+    white-space: nowrap;
+    border-bottom: none;
+  }
+
+  .nav-list li:last-child .nav-link {
+    border-right: none;
+  }
+}
+
+/* TRES PETITS ECRANS <360px iPhone SE */
+@media (max-width: 360px) {
+  .nav-link {
+    padding: 12px 2px;
+    font-size: 12px; /* minimum lisible */
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-list li {
+    flex: 1 1 100%; /* 1 bouton par ligne sur très petit écran */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   style.css
+========================= */
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: Arial, sans-serif;
+  background: #e6650f;
+  color: #cc7979;
+}
+
+/* =========================
+   SECTION HERO
+========================= */
+.hero {
+  width: 100%;
+  padding: 80px 24px;
+}
+
+/* =========================
+   CONTENEUR HERO
+========================= */
+.hero-container {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+}
+
+/* =========================
+   TEXTE HERO
+========================= */
+.hero-text {
+  flex: 1;
+}
+
+/* SVG TEXTE */
+.hero-svg-text {
+
+  width: 100%;
+  max-width: 520px;
+
+  display: block;
+
+  margin-bottom: 24px;
+
+}
+
+/* PARAGRAPHE */
+.hero-text p {
+
+  font-size: 18px;
+  line-height: 1.7;
+
+  color: #555555;
+
+  margin-bottom: 32px;
+
+  max-width: 540px;
+
+}
+
+/* =========================
+   BOUTON CTA
+========================= */
+.hero-btn {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 24px;
+
+  background: #00000062;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 5px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  transition: background 0.3s ease;
+
+}
+
+/* HOVER */
+.hero-btn:hover {
+  background: #dd530442;
+}
+
+/* =========================
+   IMAGE HERO
+========================= */
+
+/* SVG IMAGE */
+/* =========================================
+   HERO PRODUCT CAROUSEL
+========================================= */
+
+.product-carousel {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/* =========================================
+   TRACK
+========================================= */
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* =========================================
+   SLIDE
+========================================= */
+
+.product-slide {
+  min-width: 100%;
+  text-decoration: none;
+  color: #111;
+  padding: 4px;
+}
+
+.product-slide:hover .slide-content {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.slide-content {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.slide-text {
+  flex: 1;
+}
+
+.slide-category {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #FF6B35;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.slide-title {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.slide-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  max-width: 260px;
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.slide-image {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================================
+   DOTS
+========================================= */
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #DDD;
+  cursor: pointer;
+  transition: background 0.2s ease,
+              transform 0.2s ease;
+}
+
+.dot.active {
+  background: #FF6B35;
+  transform: scale(1.1);
+}
+
+/* =========================================
+   SPONSORED TEXT
+========================================= */
+
+.sponsored-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 11px;
+  color: #666;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+
+  * {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  .slide-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px; 
+
+    max-width: 330px;
+    margin: 24px auto;
+  }
+
+  .slide-description {
+    max-width: 100%;
+  }
+
+  .slide-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .slide-title {
+    font-size: 20px;
+  }
+}
+
+
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero-container {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+  /* TEXTE EN PREMIER */
+  .hero-text {
+    order: 1;
+  }
+
+  /* IMAGE EN SECOND */
+  .hero-image {
+    order: 2;
+  }
+
+  .hero-text p {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 16px;
+
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*PRODUITS*/
+
+
+
+/* WRAPPER = ça force les 4 cards côte à côte */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* CARD compacte */
+.product-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.product-card a { text-decoration: none; color: inherit; display: block; }
+
+/* Image moins haute = card moins haute */
+.product-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  padding: 12px;
+  background: #fff;
+}
+
+/* Contenu */
+.product-content { padding: 0 10px 12px 10px; }
+.product-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1f36;
+  margin: 6px 0 4px 0;
+  line-height: 1.3;
+}
+.product-desc {
+  font-size: 11px;
+  color: #6b7280;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+}
+.product-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: #FF6B35;
+  margin: 0 0 8px 0;
+}
+
+/* Logo + bouton collés */
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.amazon-logo { height: 22px; width: auto; flex-shrink: 0; }
+
+/* Bouton court */
+.products-grid .product-card .btn-voir {
+  width: 85px;
+  background: #FF6B35;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
+.btn-voir.flash {
+  animation: flash 0.3s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 12px; }
+  .product-title { font-size: 13px; }
+}
+@media (max-width: 480px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
+
+
+.voir-tout-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto 70px auto;
+  padding: 0 16px;
+}
+
+.btn-voir-tout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 999px; /* pill full arrondi */
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.btn-voir-tout span {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* Au survol : fond blanc, texte orange */
+.btn-voir-tout:hover {
+  background: #fff;
+  color: #e95b08e7;
+  border-color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.btn-voir-tout:hover span {
+  transform: translateX(4px); /* la flèche bouge */
+}
+
+/* RESPONSIVE tout écran */
+@media (max-width: 768px) {
+  .voir-tout-wrap {
+    margin: 35px auto 50px auto;
+  }
+
+  .btn-voir-tout { 
+    padding: 10px 22px; 
+    font-size: 14px;
+  }
+
+  .btn-voir-tout span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-voir-tout { 
+    padding: 9px 20px; 
+    font-size: 13px;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
