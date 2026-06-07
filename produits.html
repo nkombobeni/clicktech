@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Détails produit - Click.tech</title>
+  <link rel="stylesheet" href="style_produits.css">
+</head>
+<body>
+
+<header class="site-header"></header>
+
+<div class="page-produit" id="contenu-produit">
+  Chargement...
+</div>
+
+<script>
+
+// ICI TU METS TES PRODUITS - C'est juste une liste
+const produits = {
+  "Reolink": {
+    nom: "Reolink Caméra de Surveillance sans Fil",
+    sousTitre: "La Reolink Argus MagiCam est une mini-caméra de surveillance nomade et connectée...",
+    prix: "54,99 €",
+    img: "photos_blog/Reolinkcamera.jpg",
+    description: "La Reolink Argus MagiCam est une mini-caméra de surveillance nomade et connectée, conçue pour offrir une sécurité maximale avec un minimum de contraintes d'installation. Grâce à son format ultra-compact et sa fixation magnétique, elle se positionne en quelques secondes en intérieur comme en extérieur.",
+    lienAmazon: "https://amzn.to/4vzge5o"
+  },
+
+  "tapo-c211": {
+    nom: "Tapo C211 Black indoor",
+    sousTitre: "Caméra 2K, vision nocturne, détection personne",
+    prix: "29,90 €",
+    img: "photos_blog/Tapo-C211.webp",
+    description: "La TP-Link Tapo C211 est une caméra de surveillance WiFi intérieure connectée, qui se distingue principalement par sa couleur noire (contrairement au modèle classique blanc C210) et sa haute résolution 2K QHD (3 megapixels). Elle offre une couverture visuelle totale pour sécuriser votre domicile ou surveiller vos proches.",
+    lienAmazon: "https://amzn.to/4es7XKG"
+  }
+};
+
+// LE CODE MAGIQUE - T'y touches pas
+const id = new URLSearchParams(window.location.search).get('id');
+const p = produits[id];
+
+if (p) {
+  document.getElementById('contenu-produit').innerHTML = `
+    <section class="bloc-principal">
+      <div class="photo">
+        <img src="${p.img}" alt="${p.nom}">
+      </div>
+
+      <div class="infos">
+        <p class="label">Nom du produit</p>
+        <h1>${p.nom}</h1>
+
+        <p class="sous-titre">
+          ${p.sousTitre}
+        </p>
+
+        <p class="prix">
+          ${p.prix}
+        </p>
+
+        <a href="${p.lienAmazon}"
+           target="_blank"
+           rel="sponsored noopener"
+           class="btn-amazon">
+          Acheter sur Amazon
+        </a>
+      </div>
+    </section>
+
+    <section class="bloc-description">
+      <h2>À propos de cet article</h2>
+      <p>${p.description}</p>
+    </section>
+
+    <div class="voir-tout-wrap">
+      <a href="index.html" class="btn-voir-tout">
+        Voir d'autres articles
+        <span>→</span>
+      </a>
+    </div>
+  `;
+} else {
+  document.getElementById('contenu-produit').innerHTML =
+    "<h1>Produit introuvable</h1>";
+}
+
+</script>
+
+</body>
+</html>
