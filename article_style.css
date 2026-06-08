@@ -689,3 +689,173 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================= */
+/* FOOTER */
+/* ========================================= */
+
+.site-footer{
+    background:#F8F9FA;
+    border-top:1px solid #E5E7EB;
+    padding:50px 20px 20px;
+    margin-top:60px;
+    font-family:Arial, sans-serif;
+}
+
+/* ========================================= */
+/* CONTAINER */
+/* ========================================= */
+
+.footer-container{
+    max-width:1200px;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+/* ========================================= */
+/* TITRES */
+/* ========================================= */
+
+.footer-title{
+    font-size:22px;
+    font-weight:700;
+    color:#333333;
+    margin-bottom:16px;
+}
+
+.footer-subtitle{
+    font-size:16px;
+    font-weight:600;
+    color:#333333;
+    margin-bottom:16px;
+}
+
+/* ========================================= */
+/* TEXTES */
+/* ========================================= */
+
+.footer-text{
+    font-size:14px;
+    line-height:1.7;
+    color:#555555;
+}
+
+.footer-text.small{
+    max-width:320px;
+}
+
+/* ========================================= */
+/* LIENS */
+/* ========================================= */
+
+.footer-links{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer-links li{
+    margin-bottom:10px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:#555555;
+    font-size:14px;
+
+    transition:color 0.3s ease;
+}
+
+.footer-links a:hover{
+    color:#FF6B35;
+}
+
+/* ========================================= */
+/* RÉSEAUX SOCIAUX */
+/* ========================================= */
+
+.footer-socials{
+    display:flex;
+    gap:12px;
+    margin-top:18px;
+}
+
+.footer-socials a{
+    width:36px;
+    height:36px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#ffffff;
+    border:1px solid #E5E7EB;
+    border-radius:50%;
+
+    text-decoration:none;
+    color:#333333;
+    font-size:13px;
+    font-weight:600;
+
+    transition:all 0.3s ease;
+}
+
+.footer-socials a:hover{
+    background:#FF6B35;
+    color:#ffffff;
+    border-color:#FF6B35;
+}
+
+/* ========================================= */
+/* COPYRIGHT */
+/* ========================================= */
+
+.footer-bottom{
+    border-top:1px solid #E5E7EB;
+    margin-top:40px;
+    padding-top:20px;
+
+    text-align:center;
+}
+
+.footer-bottom p{
+    font-size:13px;
+    color:#777777;
+}
+
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
+
+@media (max-width:768px){
+
+    .footer-container{
+        grid-template-columns:1fr;
+        gap:32px;
+    }
+
+    .site-footer{
+        padding:40px 20px 20px;
+    }
+
+}
+
