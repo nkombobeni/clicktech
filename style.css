@@ -8,7 +8,7 @@
 /* PARTIE 1 : LOGO FOND BLANC - PRO ET COMPACT */
 .header-top {
   background: #FFFFFF;
-  padding: 8px 0; /* compact, pas gros */
+  padding: 8px ; /* compact, pas gros */
   text-align: center;
   border-bottom: 1px solid #E5E5E5; /* séparation fine discrète */
 }
@@ -19,9 +19,9 @@
 }
 
 .logo-img {
-  height: 54px; /* taille pro : normale, lisible */
+  height: 40px; /* taille pro : normale, lisible */
   width: auto;
-  max-width: 180px; /* évite logo géant */
+  max-width: 140px; /* évite logo géant */
 }
 
 /* PARTIE 2 : MENU FOND ORANGE - PRO */
